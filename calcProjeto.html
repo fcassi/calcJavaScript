@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Bem vindo à minha Calculadora</h1>
+    <div id = "Mensagem"></div>
+    <div id = "Divisao"></div>
+    <div id = "Conta"></div>
+    <div id = "Divisao1"></div>
+    <div id = "Agradecimento"></div>
+
+    <script>
+        //------------------Variáveis-------------
+        let mensagem = "Olá! Bem vindo pra calculadora. Espero que goste do meu projeto."
+        let divisaoLinha = "----------------------------------------------------------------"
+        let divisaoLinha1 = "----------------------------------------------------------------"
+        let agradecimento = "Obrigado por usar a minha calculadora!"
+        //--
+        let tipoConta = prompt("Digite o tipo de conta que quer fazer (Multiplicação, Soma, Subtração e Divisão)")
+        let sinal = ""
+        let num1 = Number(prompt("Digite o primeiro número!"))
+        let num2 = Number(prompt("Digite o segundo número!"))
+        let resConta;
+        //----------------------------------------
+        
+        //----------------Contas---------------------
+        switch (tipoConta) {
+            case "Multiplicação":
+            sinal = "x"
+            resConta = num1*num2
+                break;
+            case "Soma":
+            sinal = "+"
+            resConta = num1+num2
+                break;
+            case "Subtração":
+            sinal = "-"
+            resConta = num1-num2
+                break;
+            case "Divisão":
+            sinal = "/"
+            resConta = num1/num2
+            default:
+            agradecimento = "Favor digitar um tipo de conta válido"
+                break;
+        }
+        //----------------------------------------
+
+        document.getElementById("Mensagem").innerHTML = mensagem
+        document.getElementById("Divisao").innerHTML = divisaoLinha
+        document.getElementById("Divisao1").innerHTML = divisaoLinha1
+        document.getElementById("Conta").innerHTML = String(num1) + " " + String(sinal) + " " +  String(num2) + "=" + String(resConta)
+        document.getElementById("Agradecimento").innerHTML = agradecimento
+
+        
+
+
+    </script>
+    
+</body>
+</html>
